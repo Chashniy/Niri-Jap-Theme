@@ -1,0 +1,109 @@
+{
+    "layer": "top",
+    "margin-top": 4,
+    "margin-left": 30,
+    "margin-right": 30,
+    "margin-bottom": 0,
+    "position": "top",
+    "expand-center": true,
+    "modules-left": ["network","niri/workspaces"],
+    "modules-center": ["custom/cpu", "clock", "custom/gpu"],
+    "modules-right": ["tray", "pulseaudio", "power-profiles-daemon", "custom/power"],
+
+    "network": {
+        "tooltip": false,
+        "format-ethernet": "UwU",
+        "format-disconnected": "QwQ",
+        "format-icons": ["", "", ""],  // <- добавить это
+        "interval": 5
+    },
+    
+    "custom/cpu": {
+        "tooltip": false,
+        "exec": "~/.config/waybar/scripts/cpu.sh",
+        "interval": 2,
+        "format": "{}"
+    },
+    
+    "clock": {
+        "tooltip": false,
+        "format": " {:%a %d %b %H:%M} ",
+        "locale": "ru_RU.UTF-8"
+    },
+    
+    "custom/gpu": {
+        "tooltip": false,
+        "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits | sed 's/,/./g' | awk '{printf \" %.0f%% %.0f°C\", $1, $2}'",
+        "interval": 3,
+        "on-click-right": "nvidia-settings"
+    },
+
+    "pulseaudio": {
+        "tooltip": false,
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": ["", "", ""],
+        "menu": "on-click",
+        "on-click-right": "pavucontrol",
+        "menu-file": "/home/chashniy/.config/waybar/audio-menu.xml",
+        "menu-actions": {
+            "speakers": "pactl set-sink-port 60 analog-output-lineout",
+            "headphones": "pactl set-sink-port 60 analog-output-headphones"
+        }
+    },
+    
+    "custom/power": {
+        "tooltip": false,
+        "format": "⏻",
+        "menu": "on-click",
+        "menu-file": "/home/chashniy/.config/waybar/power-menu.xml",
+        "menu-actions": {
+            "shutdown": "systemctl poweroff",
+            "reboot": "systemctl reboot",
+            "suspend": "systemctl suspend",
+            "logout": "hniri msg action quit && pkill -f niri"
+            }
+        },
+    
+    "tray": {
+        "tooltip": false,
+        "icon-size": 18,
+        "spacing": 8
+    },
+    
+    "power-profiles-daemon": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "performance": "󱐋",
+            "balanced": "",
+            "power-saver": "󰌪"
+        },
+        "menu": "on-click",
+        "menu-file": "/home/chashniy/.config/waybar/power-profiles-menu.xml",
+        "menu-actions": {
+            "power-profile-performance": "powerprofilesctl set performance && notify-send 'Power Mode' 'Performance' -t 1000",
+            "power-profile-balanced": "powerprofilesctl set balanced && notify-send 'Power Mode' 'Balanced' -t 1000",
+            "power-profile-power-saver": "powerprofilesctl set power-saver && notify-send 'Power Mode' 'Power Saver' -t 1000"
+        }
+    },
+
+    "niri/workspaces": {
+        "tooltip": false,
+        "disable-scroll": false,
+        "all-outputs": false,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        }
+    }
+}

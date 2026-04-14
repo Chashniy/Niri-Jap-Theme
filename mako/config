@@ -1,0 +1,13 @@
+width=200
+margin=5
+padding=6
+border-radius=20
+background-color=#2a2827
+border-color=#498C8C
+border-size=5
+text-color=#F2E6C2
+font=JetBrainsMono Nerd Font 11
+default-timeout=5000
+max-visible=5
+group-by=app-name
+format=<b>%a</b>\n%s\n%b
