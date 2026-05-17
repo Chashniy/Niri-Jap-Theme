@@ -1,0 +1,2 @@
+[hooks]
+wallpaper_changed = "/usr/share/sddm/themes/noctalia/sync-shell-wallpaper.sh"

@@ -1,0 +1,38 @@
+{
+  "activeBackend": "mpvpaper",
+  "automationMode": "random",
+  "automationTime": 300,
+  "fillMode": "fit",
+  "mpvSocket": "/tmp/mpv-socket",
+  "profile": "default",
+  "volume": 1,
+  "wallpapersFolder": "/home/chashniy/Pictures/Wallpaper",
+  "thumbCacheReady": true,
+  "enabled": true,
+  "monitorSpecific": false,
+  "DP-1": {
+    "currentWallpaper": "/home/chashniy/Pictures/Wallpaper/Frieren Pixel Sorcery 4K_60FPS .mp4",
+    "volume": 1,
+    "automation": false,
+    "automationMode": "random",
+    "automationTime": 300,
+    "hardwareAcceleration": true,
+    "profile": "fast",
+    "fillMode": "",
+    "orientation": 0,
+    "isPlaying": false
+  },
+  "DP-2": {
+    "currentWallpaper": "/home/chashniy/Pictures/Wallpaper/Frieren Pixel Sorcery 4K_60FPS .mp4",
+    "volume": 1,
+    "automation": false,
+    "automationMode": "random",
+    "automationTime": 300,
+    "hardwareAcceleration": true,
+    "profile": "fast",
+    "fillMode": "",
+    "orientation": 0,
+    "isPlaying": false
+  },
+  "automationCustomTime": []
+}
